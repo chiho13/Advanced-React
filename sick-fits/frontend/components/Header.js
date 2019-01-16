@@ -5,19 +5,19 @@ import Router from 'next/router';
 import Nav from './Nav';
 
 Router.onRouteChangeStart = () => {
-  NProgress.start();
-  console.log('help')
+    NProgress.start();
+    console.log('help')
 };
 
 Router.onRouteChangeComplete = () => {
-  NProgress.done();
+    NProgress.done();
 };
 
 Router.onRouteChangeError = () => {
-  NProgress.done();
+    NProgress.done();
 };
 
-const Logo = styled.h1`
+const Logo = styled.h1 `
     font-size: 4rem;
     margin-left: 2rem;
     position: relative;
@@ -38,7 +38,7 @@ const Logo = styled.h1`
     }
 `;
 
-const StyledHeader = styled.header`
+const StyledHeader = styled.header `
     .bar {
         border-bottom: 10px solid ${props => props.theme.black};
         display: grid;
@@ -63,7 +63,7 @@ const Header = () => (
         <div className="bar">
             <Logo>
                 <Link href="/">
-                <a>sick fits</a>
+                    <a>sick fits</a>
                 </Link>
             </Logo>
             <Nav/>

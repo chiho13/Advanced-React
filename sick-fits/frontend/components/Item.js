@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import PropTypes from 'prop-types'
 import Link from 'next/link';
 import Title from './styles/Title';
@@ -14,34 +14,41 @@ class Item extends Component {
     render() {
         const {item} = this.props;
         return <ItemStyles>
-                {item.image && <img src={item.image} alt={item.title} />}
+            {item.image && <img src={item.image} alt={item.title}/>}
 
-                <Title>
-                    <Link href={{path: '/item',
-                                query: { id: item.id}
-                                }}>
-                        <a>
-                            {item.title}
-                        </a> 
-                    </Link>
-                </Title>
-                <PriceTag>
-                    {formatMoney(item.price)}
-                </PriceTag>
-                <p>{item.description}</p>
-                <div className="buttonList">
-                        <Link href={{
-                                    pathname: "update",
-                                    query: {id: item.id}
-                                    }}>
-                                <a>
-                                    Edit ✏️
-                                </a>
-                        </Link>  
-                        <button>Add To Card</button>    
-                        <button>Delete</button>  
-                </div>
-            </ItemStyles>
+            <Title>
+                <Link
+                    href={{
+                    path: '/item',
+                    query: {
+                        id: item.id
+                    }
+                }}>
+                    <a>
+                        {item.title}
+                    </a>
+                </Link>
+            </Title>
+            <PriceTag>
+                {formatMoney(item.price)}
+            </PriceTag>
+            <p>{item.description}</p>
+            <div className="buttonList">
+                <Link
+                    href={{
+                    pathname: "update",
+                    query: {
+                        id: item.id
+                    }
+                }}>
+                    <a>
+                        Edit ✏️
+                    </a>
+                </Link>
+                <button>Add To Card</button>
+                <button>Delete</button>
+            </div>
+        </ItemStyles>
     }
 }
 
